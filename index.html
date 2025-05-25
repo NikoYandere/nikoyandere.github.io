@@ -151,7 +151,7 @@
             text-decoration: underline;
         }
         .right-content img {
-            width: 150px; /* Reduzindo o tamanho da logo */
+            width: 150px;
             height: auto;
             margin-bottom: 15px;
         }
@@ -170,6 +170,12 @@
             .right-content .button {
                 width: 100%;
             }
+            .faq-section {
+                flex-direction: column;
+            }
+            .faq-left, .faq-right {
+                padding: 0;
+            }
         }
     </style>
 </head>
@@ -181,22 +187,21 @@
             <p>
                 The Yanix Launcher is an independent initiative created to run Yandere Simulator on Linux operating systems. It is neither supported nor developed by YandereDev. Please do not request a Windows port—this launcher is specifically optimized for Linux/Mac OS. Similarly, please avoid asking for universal package formats like .deb, .appimage, or .snap, as we provide the launcher as a Python 3 script (.py) and UCN Package (.ucn) for simplicity.<br><br>
 
-                The Yanix Launcher runs the game using WINE, and requires WINE 8.0 or newer for proper functionality. While most major display bugs—like fullscreen issues—have been fixed in the Unity 6 Build, some letter display problems persist. Fixing these would require YandereDev's investigation, as this is beyond the scope of the launcher. Keep in mind that WINE may still encounter display-related issues, and in the future, a switch to GE-Proton might be considered.<br><br>
+                The Yanix Launcher runs the game using WINE, and requires WINE 8.0 or newer for proper functionality. While most major display bugs—like fullscreen issues have been fixed in the Unity 6 Build, some letter display problems persist. To fix the missing letters, try running <code>winetricks allfonts</code> in your terminal. This installs common Windows fonts which may resolve the issue. Keep in mind that full resolution of these problems would still require YandereDev's investigation, as it's beyond the scope of the launcher.<br><br>
 
                 This launcher is open-source, and both the GitHub repository and installer are available. Yanix has been developed and tested primarily for Linux/Mac, and while a FreeBSD build is unlikely to be released, you are welcome to fork the repository to adapt it for your preferred Unix/Linux distribution.<br><br>
 
-                Bug reports such as "Letters are not showing for me!" will not be addressed. These issues are entirely YandereDev’s responsibility, not ours.
             </p>
         </div>
         <div class="right-content">
             <img src="logo.png" alt="Yanix Launcher Logo" class="logo">
             <h2>Yanix Launcher is Licensed Under Niko's License V2 (NLv2)</h2>
-            <a class="button" href="https://github.com/NikoYandere/yanix-launcher" target="_blank">Our GitHub Repo</a>
-            <a class="button" href="https://yanix-launcher.blogspot.com" target="_blank">Development Blog</a>
-            <a class="button" href="https://discord.gg/7JC4FGn69U" target="_blank">Join Our Discord</a>
-            <a class="button" href="https://nikoyandere.github.io/ucn-repo/org.nikoyandere.yanix-launcher.ucn" target="_blank">Download UCN Package</a>
+            <a class="button" href="https://github.com/NikoYandere/yanix-launcher" target="_blank" rel="noopener noreferrer">Our GitHub Repo</a>
+            <a class="button" href="https://yanix-launcher.blogspot.com" target="_blank" rel="noopener noreferrer">Development Blog</a>
+            <a class="button" href="https://discord.gg/7JC4FGn69U" target="_blank" rel="noopener noreferrer">Join Our Discord</a>
+            <a class="button" href="https://nikoyandere.github.io/ucn-repo/org.nikoyandere.yanix-launcher.ucn" target="_blank" rel="noopener noreferrer">Download UCN Package</a>
             <div class="notice">
-                *Only use <code>.ucn</code>  if you have the <a href="https://github.com/NikoYandere/ucn-package-manager" target="_blank">UCN Package Manager</a> installed.
+                *Only use <code>.ucn</code>  if you have the <a href="https://github.com/NikoYandere/ucn-package-manager" target="_blank" rel="noopener noreferrer">UCN Package Manager</a> installed.
             </div>
             <div class="notice">
                 <h3>Download for Non-UCN Users</h3>
@@ -227,7 +232,7 @@
             </div>
             <div class="faq-item">
                 <strong>Where is this site source code?</strong>
-                You can find it <a href="https://github.com/NikoYandere/nikoyandere.github.io" target="_blank">here</a>.
+                You can find it <a href="https://github.com/NikoYandere/nikoyandere.github.io" target="_blank" rel="noopener noreferrer">here</a>.
             </div>
         </div>
     </section>
