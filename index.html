@@ -58,11 +58,20 @@
         .left-content {
             text-align: left;
         }
+        .left-content p {
+            line-height: 1.6;
+            margin-bottom: 1rem;
+        }
         .right-content {
             text-align: right;
             display: flex;
             flex-direction: column;
             align-items: flex-end;
+        }
+        .right-content img {
+            max-width: 100%;
+            height: auto;
+            margin-bottom: 15px;
         }
         .right-content .button {
             margin: 10px 0;
@@ -132,10 +141,6 @@
             flex: 1;
             padding-right: 20px;
         }
-        .faq-section .faq-right {
-            flex: 1;
-            padding-left: 20px;
-        }
         .faq-section h2 {
             text-align: center;
             margin-bottom: 30px;
@@ -151,11 +156,6 @@
         .faq-item a {
             color: #ff512f;
             text-decoration: underline;
-        }
-        .right-content img {
-            width: 150px;
-            height: auto;
-            margin-bottom: 15px;
         }
         @media (max-width: 768px) {
             .red-gradient {
@@ -175,7 +175,7 @@
             .faq-section {
                 flex-direction: column;
             }
-            .faq-left, .faq-right {
+            .faq-section .faq-left {
                 padding: 0;
             }
         }
@@ -186,15 +186,10 @@
     <section class="section red-gradient">
         <div class="left-content">
             <h1>Yanix Launcher:<br>Join Yandere Simulator's Linux/Mac Revolution</h1>
-            <p>
-                The Yanix Launcher is an independent initiative created to run Yandere Simulator on Linux operating systems. It is neither supported nor developed by YandereDev. Please do not request a Windows port—this launcher is specifically optimized for Linux/Mac OS. Similarly, please avoid asking for universal package formats like .deb, .appimage, or .snap, as we provide the launcher as a Python 3 script (.py) and UCN Package (.ucn) for simplicity.<br><br>
-
-                The Yanix Launcher runs the game using WINE, and requires WINE 8.0 or newer for proper functionality. While most major display bugs like fullscreen issues have been fixed in the Unity 6 Build, some letter display problems persist. To fix the missing letters, try running <code>winetricks allfonts</code> in your terminal. This installs common Windows fonts which may resolve the issue. Keep in mind that full resolution of these problems would still require YandereDev's investigation, as it's beyond the scope of the launcher.<br><br>
-
-                This launcher is open-source, and both the GitHub repository and installer are available. Yanix has been developed and tested primarily for Linux/Mac, and while a FreeBSD build is unlikely to be released, you are welcome to fork the repository to adapt it for your preferred Unix/Linux distribution.<br><br>
-
-                <strong>Windows Version Status:</strong> A Windows version of Yanix Launcher is currently under development. However, it is not yet fully equivalent to the Linux/Mac versions and may lack some features or optimizations. Stay tuned for updates in Akademi Launcher (Aka YLWE) <a href="https://github.com/NikoYandere/akademi-launcher" target="_blank" rel="noopener noreferrer">GitHub repository</a>.
-            </p>
+            <p>The Yanix Launcher is an independent initiative created to run Yandere Simulator on Linux operating systems. It is neither supported nor developed by YandereDev. Please do not request a Windows port—this launcher is specifically optimized for Linux/Mac OS. Similarly, please avoid asking for universal package formats like .deb, .appimage, or .snap, as we provide the launcher as a Python 3 script (.py) and UCN Package (.ucn) for simplicity.</p>
+            <p>The Yanix Launcher runs the game using WINE, and requires WINE 8.0 or newer for proper functionality. While most major display bugs like fullscreen issues have been fixed in the Unity 6 Build, some letter display problems persist. To fix the missing letters, try running <code>winetricks allfonts</code> in your terminal. This installs common Windows fonts which may resolve the issue. Keep in mind that full resolution of these problems would still require YandereDev's investigation, as it's beyond the scope of the launcher.</p>
+            <p>This launcher is open-source, and both the GitHub repository and installer are available. Yanix has been developed and tested primarily for Linux/Mac, and while a FreeBSD build is unlikely to be released, you are welcome to fork the repository to adapt it for your preferred Unix/Linux distribution.</p>
+            <p><strong>Windows Version Status:</strong> A Windows version of Yanix Launcher is currently under development. However, it is not yet fully equivalent to the Linux/Mac versions and may lack some features or optimizations. Stay tuned for updates in Akademi Launcher (Aka YLWE) <a href="https://github.com/NikoYandere/akademi-launcher" target="_blank" rel="noopener noreferrer">GitHub repository</a>.</p>
         </div>
         <div class="right-content">
             <img src="logo.png" alt="Yanix Launcher Logo" class="logo">
@@ -202,18 +197,17 @@
             <a class="button" href="https://github.com/NikoYandere/yanix-launcher" target="_blank" rel="noopener noreferrer">Our GitHub Repo</a>
             <a class="button" href="https://yanix-launcher.blogspot.com" target="_blank" rel="noopener noreferrer">Development Blog</a>
             <a class="button" href="https://discord.gg/7JC4FGn69U" target="_blank" rel="noopener noreferrer">Join Our Discord</a>
-            <a class="button" href="https://www.mediafire.com/file/4f0ey3std0lmp4e/org.nikoyandere.yanix-launcher.ucn/file " target="_blank" rel="noopener noreferrer">Download UCN Package </a>
-           <div class="notice">
-                (remember to  </code>chmod +x ~/.ucndata/packages/org.nikoyandere.yanix-launcher/yanix-launcher/binary/yanix-launcher<code>)
+            <a class="button" href="https://www.mediafire.com/file/4f0ey3std0lmp4e/org.nikoyandere.yanix-launcher.ucn/file" target="_blank" rel="noopener noreferrer">Download UCN Package</a>
+            <div class="notice">
+                *remember to <code>chmod +x ~/.ucndata/packages/org.nikoyandere.yanix-launcher/yanix-launcher/binary/yanix-launcher</code>
             </div>
-
-               <div class="notice">
-                *Only use <code>.ucn</code>  if you have the <a href="https://github.com/NikoYandere/ucn-package-manager" target="_blank" rel="noopener noreferrer">UCN Package Manager</a> installed.
+            <div class="notice">
+                *Only use <code>.ucn</code> if you have the <a href="https://github.com/NikoYandere/ucn-package-manager" target="_blank" rel="noopener noreferrer">UCN Package Manager</a> installed.
             </div>
             <div class="notice">
                 <h3>Download for Non-UCN Users</h3>
                 <div id="clone-command">git clone https://github.com/NikoYandere/yanix-launcher</div>
-                <button onclick="copyCommand()">Copy Command</button>
+                <button type="button" aria-label="Copy Git clone command" onclick="copyCommand()">Copy Command</button>
             </div>
         </div>
     </section>
@@ -252,7 +246,12 @@
 <script>
     function copyCommand() {
         const text = document.getElementById("clone-command").textContent;
-        navigator.clipboard.writeText(text).then(() => alert("Command copied!"));
+        navigator.clipboard.writeText(text).then(() => {
+            const btn = document.querySelector('button[onclick="copyCommand()"]');
+            const original = btn.textContent;
+            btn.textContent = "Copied!";
+            setTimeout(() => btn.textContent = original, 2000);
+        });
     }
 </script>
 </body>
