@@ -2,8 +2,9 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Yanix Launcher | Linux & Mac Yandere Simulator Launcher</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Yanix Launcher | Linux &amp; Mac Yandere Simulator Launcher</title>
     <meta name="description" content="Download Yanix Launcher - an optimized, open-source launcher to play Yandere Simulator on Linux and Mac using WINE and Python. Windows version in development.">
     <meta name="keywords" content="Yanix Launcher, Yandere Simulator, Linux launcher, Mac launcher, WINE, open source, Python launcher, Yanix Windows version, game launcher, YandereSim Linux, YandereSim Mac">
     <meta name="author" content="NikoYandere">
@@ -14,9 +15,7 @@
     <link rel="icon" type="image/png" href="faviconv2.png">
 
     <style>
-        html {
-            scroll-behavior: smooth;
-        }
+        html { scroll-behavior: smooth; }
         html, body {
             margin: 0;
             padding: 0;
@@ -69,6 +68,7 @@
             align-items: flex-end;
         }
         .right-content img {
+            width: 150px;
             max-width: 100%;
             height: auto;
             margin-bottom: 15px;
@@ -244,15 +244,15 @@
 </main>
 
 <script>
-    function copyCommand() {
-        const text = document.getElementById("clone-command").textContent;
-        navigator.clipboard.writeText(text).then(() => {
-            const btn = document.querySelector('button[onclick="copyCommand()"]');
-            const original = btn.textContent;
-            btn.textContent = "Copied!";
-            setTimeout(() => btn.textContent = original, 2000);
-        });
-    }
+function copyCommand() {
+    const text = document.getElementById("clone-command").textContent;
+    navigator.clipboard.writeText(text).then(() => {
+        const btn = document.querySelector('button[onclick="copyCommand()"]');
+        const originalText = btn.textContent;
+        btn.textContent = "Copied!";
+        setTimeout(() => btn.textContent = originalText, 2000);
+    });
+}
 </script>
 </body>
 </html>
