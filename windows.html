@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Akademi Launcher | Windows Yandere Simulator Launcher</title>
+    <meta name="description" content="Download Akademi Launcher - an optimized, open-source launcher to play Yandere Simulator on Windows. No WINE or compatibility layers needed.">
+    <meta name="keywords" content="Akademi Launcher, Yandere Simulator, Windows launcher, open source, game launcher, YandereSim Windows">
+    <meta name="author" content="NikoYandere">
+    <meta property="og:title" content="Akademi Launcher - Windows Yandere Simulator Launcher">
+    <meta property="og:description" content="Optimized, open-source launcher for Yandere Simulator on Windows.">
+    <meta property="og:image" content="logo.png">
+    <meta property="og:type" content="website">
+    <link rel="icon" type="image/png" href="faviconv2.png">
+
+    <style>
+        html { scroll-behavior: smooth; }
+        html, body {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            font-family: 'Futura', sans-serif;
+            background-color: black;
+            overflow-x: hidden;
+        }
+        .section {
+            min-height: 100vh;
+            padding: 20px;
+            color: white;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+        }
+        .red-gradient {
+            background: linear-gradient(-45deg, #ff512f, #dd2476, #ff512f, #dd2476);
+            background-size: 400% 400%;
+            animation: gradientBG 8s ease infinite;
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            padding: 40px 20px;
+        }
+        @keyframes gradientBG {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+        .left-content, .right-content {
+            flex: 1 1 400px;
+            padding: 20px;
+            box-sizing: border-box;
+        }
+        .left-content {
+            text-align: left;
+        }
+        .left-content p {
+            line-height: 1.6;
+            margin-bottom: 1rem;
+        }
+        .right-content {
+            text-align: right;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-end;
+        }
+        .right-content img {
+            width: 150px;
+            max-width: 100%;
+            height: auto;
+            margin-bottom: 15px;
+        }
+        .right-content .button {
+            margin: 10px 0;
+            padding: 12px 24px;
+            font-size: 1rem;
+            border: none;
+            background-color: #333;
+            color: white;
+            cursor: pointer;
+            border-radius: 6px;
+            text-decoration: none;
+            text-align: center;
+            transition: background-color 0.3s ease;
+        }
+        .right-content .button:hover {
+            background-color: #555;
+        }
+        .notice {
+            margin-top: 20px;
+            background-color: #000;
+            color: #fff;
+            padding: 12px 20px;
+            border-radius: 8px;
+            max-width: 300px;
+            text-align: left;
+        }
+        .notice a {
+            color: #3b82f6;
+            text-decoration: underline;
+        }
+        #clone-command {
+            background: #1a1a1a;
+            padding: 8px;
+            border-radius: 8px;
+            font-family: monospace;
+            font-size: 1rem;
+            color: white;
+            margin-top: 10px;
+            word-break: break-word;
+            max-width: 100%;
+        }
+        button {
+            margin-top: 15px;
+            padding: 12px 24px;
+            font-size: 1rem;
+            border: none;
+            background-color: #333;
+            color: white;
+            cursor: pointer;
+            border-radius: 6px;
+            transition: background-color 0.3s ease;
+        }
+        button:hover {
+            background-color: #555;
+        }
+        .faq-section {
+            background-color: #111;
+            padding: 40px 20px;
+            color: white;
+            text-align: left;
+            flex: 1 1 100%;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+        }
+        .faq-section .faq-left {
+            flex: 1;
+            padding-right: 20px;
+        }
+        .faq-section h2 {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        .faq-item {
+            margin-bottom: 20px;
+        }
+        .faq-item strong {
+            display: block;
+            margin-bottom: 5px;
+            font-size: 1.2rem;
+        }
+        .faq-item a {
+            color: #ff512f;
+            text-decoration: underline;
+        }
+        @media (max-width: 768px) {
+            .red-gradient {
+                flex-direction: column;
+                text-align: center;
+            }
+            .left-content, .right-content {
+                align-items: center;
+                text-align: center;
+            }
+            .right-content {
+                align-items: center;
+            }
+            .right-content .button {
+                width: 100%;
+            }
+            .faq-section {
+                flex-direction: column;
+            }
+            .faq-section .faq-left {
+                padding: 0;
+            }
+        }
+        /* Easter Egg Overlay */
+        #easter-overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(17, 17, 17, 0.95);
+            color: #f44336;
+            font-family: 'Arial Black', Arial, sans-serif;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            z-index: 9999;
+        }
+        #easter-overlay h1 {
+            font-size: 4rem;
+            margin-bottom: 0.2em;
+            text-transform: uppercase;
+            letter-spacing: 0.2em;
+        }
+        #easter-overlay p {
+            font-size: 1.5rem;
+            max-width: 600px;
+            line-height: 1.4;
+        }
+        #easter-overlay footer {
+            margin-top: 3em;
+            font-size: 0.9rem;
+            color: #555;
+        }
+    </style>
+</head>
+<body>
+<main>
+    <section class="section red-gradient">
+        <div class="left-content">
+            <h1>Akademi Launcher:<br>Your Yandere Simulator Hub for Windows</h1>
+            <p>The Akademi Launcher is an independent initiative created to run Yandere Simulator on Windows operating systems.</p>
+            <p>Akademi Launcher provides an optimized experience for Yandere Simulator on Windows, ensuring smooth gameplay and compatibility. It does not require WINE or any other compatibility layers, as it is built natively for the Windows environment. This simplifies the process of getting the game up and running for Windows users.</p>
+            <p>This launcher is open-source, and both the GitHub repository and installer are available. Akademi Launcher has been developed and tested primarily for Windows, offering a tailored experience for this platform.</p>
+        </div>
+        <div class="right-content">
+            <img src="logo.png" alt="Akademi Launcher Logo" class="logo">
+            <h2>Akademi Launcher is Licensed Under Niko's License V2 (NLv2)</h2>
+            <a class="button" href="https://github.com/NikoYandere/akademi-launcher" target="_blank" rel="noopener noreferrer">Akademi Launcher GitHub</a>
+            <a class="button" href="https://yanix-launcher.blogspot.com" target="_blank" rel="noopener noreferrer">Development Blog</a>
+            <a class="button" href="https://discord.gg/7JC4FGn69U" target="_blank" rel="noopener noreferrer">Join Our Discord</a>
+           
+        </div>
+    </section>
+
+    <section class="section faq-section">
+        <div class="faq-left">
+            <h2>Frequently Answered Questions</h2>
+            <div class="faq-item">
+                <strong>Does this launcher support YandereDev?</strong>
+                No.
+            </div>
+            <div class="faq-item">
+                <strong>Is it available for other operating systems?</strong>
+                Akademi Launcher is designed exclusively for Windows. Yanix is for Linux & mac
+            </div>
+            <div class="faq-item">
+                <strong>Is Akademi Launcher stolen?</strong>
+                No. its yanix for windows wdym 😭😭
+            </div>
+            <div class="faq-item">
+                <strong>Where is this site source code?</strong>
+                You can find it <a href="https://github.com/NikoYandere/nikoyandere.github.io" target="_blank" rel="noopener noreferrer">here</a>.
+            </div>
+           
+        </div>
+    </section>
+</main>
+
+
+<div id="easter-overlay">
+    <h1>Domain Seized</h1>
+    <p>This fucking domain has been seized because we want.<br>Now get out of here, stupid :3</p>
+    <footer>© 2025 Akademi Launcher Community</footer>
+</div>
+
+<script>
+
+(function() {
+    const secret = 'DOMAINSEIZED'.split('');
+    let input = [];
+    document.addEventListener('keydown', e => {
+        input.push(e.key.toUpperCase());
+        if (input.slice(-secret.length).join('') === secret.join('')) {
+            document.getElementById('easter-overlay').style.display = 'flex';
+            input = [];
+        }
+    });
+})();
+</script>
+
+</body>
+</html>
