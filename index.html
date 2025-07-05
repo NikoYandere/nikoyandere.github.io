@@ -76,7 +76,10 @@
             border-bottom: none;
         }
         .hero-section {
-            background: linear-gradient(-45deg, #dd2476, #ff512f);
+            /* Animated Gradient */
+            background: linear-gradient(-45deg, #dd2476, #ff512f, #a100ff, #00d9ff);
+            background-size: 400% 400%;
+            animation: gradient-animation 15s ease infinite;
             color: white;
             display: flex;
             flex-direction: row;
@@ -84,6 +87,19 @@
             justify-content: space-around;
             align-items: center;
         }
+
+        @keyframes gradient-animation {
+            0% {
+                background-position: 0% 50%;
+            }
+            50% {
+                background-position: 100% 50%;
+            }
+            100% {
+                background-position: 0% 50%;
+            }
+        }
+
         .content-column {
             flex: 1 1 450px;
             padding: 20px;
