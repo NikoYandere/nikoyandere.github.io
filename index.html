@@ -24,51 +24,31 @@
 <meta name="twitter:image" content="https://nikoyandere.github.io/Yanix-Launcher.png" />
 
 <style>
-html {
-  scroll-behavior: smooth;
-  box-sizing: border-box;
-}
-*, *::before, *::after {
-  box-sizing: inherit;
-}
+html { scroll-behavior: smooth; box-sizing: border-box; }
+*, *::before, *::after { box-sizing: inherit; }
 body {
-  margin: 0;
-  padding: 0;
-  font-family: 'Segoe UI', 'Roboto', 'Helvetica Neue', Arial, sans-serif;
-  background-color: #0a0a0a;
-  color: #e0e0e0;
+  margin: 0; padding: 0;
+  font-family: 'Segoe UI','Roboto','Helvetica Neue',Arial,sans-serif;
+  background-color: #0a0a0a; color: #e0e0e0;
   overflow-x: hidden;
 }
-main {
-  display: block;
-}
+main { display: block; }
 .section {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  min-height: 100vh;
-  padding: 40px 20px;
-  text-align: center;
-  border-bottom: 1px solid #222;
-  max-width: 100vw;
-  overflow-x: hidden;
+  display: flex; flex-direction: column;
+  justify-content: center; align-items: center;
+  min-height: 100vh; padding: 40px 20px;
+  text-align: center; border-bottom: 1px solid #222;
+  max-width: 100vw; overflow-x: hidden;
 }
-.section:last-child {
-  border-bottom: none;
-}
+.section:last-child { border-bottom: none; }
 .hero-section {
-  background: linear-gradient(-45deg, #dd2476, #ff512f, #a100ff, #00d9ff);
+  background: linear-gradient(-45deg,#dd2476,#ff512f,#a100ff,#00d9ff);
   background-size: 400% 400%;
   animation: gradient-animation 15s ease infinite;
   color: white;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  align-items: center;
-  gap: 20px;
-  max-width: 1200px;
-  margin: 0 auto;
+  display: flex; flex-wrap: wrap;
+  justify-content: center; align-items: center;
+  gap: 20px; max-width: 1200px; margin: 0 auto;
 }
 @keyframes gradient-animation {
   0% { background-position: 0% 50%; }
@@ -76,191 +56,111 @@ main {
   100% { background-position: 0% 50%; }
 }
 .content-column {
-  flex: 1 1 400px;
-  padding: 20px;
-  max-width: 600px;
-  box-sizing: border-box;
+  flex: 1 1 400px; padding: 20px;
+  max-width: 600px; box-sizing: border-box;
 }
-.content-column.left {
-  text-align: left;
-}
+.content-column.left { text-align: left; }
 .content-column.right {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-align: center;
+  display: flex; flex-direction: column;
+  align-items: center; text-align: center;
 }
 .hero-section h1 {
-  font-size: 2.8rem;
-  margin-bottom: 0.5em;
-  font-weight: 700;
+  font-size: 2.8rem; margin-bottom: .5em; font-weight: 700;
 }
 .hero-section p {
-  font-size: 1.1rem;
-  line-height: 1.7;
-  margin-bottom: 1.5rem;
+  font-size: 1.1rem; line-height: 1.7; margin-bottom: 1.5rem;
 }
-.logo {
-  width: 150px;
-  height: auto;
-  margin-bottom: 20px;
-}
+.logo { width: 150px; height: auto; margin-bottom: 20px; }
 .button {
-  display: inline-block;
-  margin: 8px 0;
-  padding: 14px 28px;
-  font-size: 1rem;
-  font-weight: 600;
-  border: none;
-  background-color: #1a1a1a;
-  color: white;
-  cursor: pointer;
-  border-radius: 8px;
-  text-decoration: none;
-  text-align: center;
-  transition: background-color 0.3s ease, transform 0.2s ease;
-  width: 100%;
-  max-width: 280px;
-  box-sizing: border-box;
+  display: inline-block; margin: 8px 0;
+  padding: 14px 28px; font-size: 1rem; font-weight: 600;
+  border: none; background-color: #1a1a1a; color: white;
+  cursor: pointer; border-radius: 8px; text-decoration: none;
+  text-align: center; transition: background-color .3s ease,transform .2s ease;
+  width: 100%; max-width: 280px; box-sizing: border-box;
 }
-.button:hover {
-  background-color: #333;
-  transform: translateY(-2px);
-}
+.button:hover { background-color: #333; transform: translateY(-2px); }
 .notice-box {
   margin-top: 15px;
-  background-color: rgba(0, 0, 0, 0.3);
+  background-color: rgba(0,0,0,0.3);
   color: #f0f0f0;
-  padding: 15px;
-  border-radius: 8px;
-  max-width: 320px;
-  text-align: left;
-  font-size: 0.9rem;
+  padding: 15px; border-radius: 8px;
+  max-width: 320px; text-align: left;
+  font-size: .9rem; box-sizing: border-box;
 }
-.notice-box a {
-  color: #ff8c6e;
-  text-decoration: underline;
+.notice-box a { color: #ff8c6e; text-decoration: underline; }
+.notice-box p code {
+  display: block;
+  width: 100%;
+  max-width: 100%;
+  word-break: break-all;
+  white-space: pre-wrap;
+  margin-top: 8px;
 }
 .code-block {
-  background: #1e1e1e;
-  padding: 12px;
-  border-radius: 8px;
-  font-family: 'Courier New', Courier, monospace;
-  font-size: 1rem;
-  color: white;
-  margin-top: 10px;
-  word-break: break-word;
-  position: relative;
+  background: #1e1e1e; padding: 12px;
+  border-radius: 8px; font-family: 'Courier New',Courier,monospace;
+  font-size: 1rem; color: white;
+  margin-top: 10px; word-break: break-word;
+  position: relative; width: 100%; box-sizing: border-box;
 }
 .copy-button {
-  margin-top: 10px;
-  padding: 10px 20px;
-  font-size: 0.9rem;
-  width: 100%;
-  max-width: 280px;
-  box-sizing: border-box;
+  margin-top: 10px; padding: 10px 20px; font-size: .9rem;
+  width: 100%; max-width: 280px; box-sizing: border-box;
 }
 .requirements-section, .faq-section {
-  background-color: #111;
-  padding: 60px 20px;
-  width: 100%;
-  max-width: 900px;
-  margin: 0 auto;
-  box-sizing: border-box;
+  background-color: #111; padding: 60px 20px;
+  width: 100%; max-width: 900px; margin: 0 auto; box-sizing: border-box;
 }
-.container {
-  max-width: 800px;
-  margin: 0 auto;
-  text-align: left;
-  box-sizing: border-box;
-}
+.container { max-width: 800px; margin: 0 auto; text-align: left; box-sizing: border-box; }
 .section h2 {
-  text-align: center;
-  font-size: 2.2rem;
-  margin-bottom: 40px;
-  color: #dd2476;
+  text-align: center; font-size: 2.2rem;
+  margin-bottom: 40px; color: #dd2476;
 }
-.requirements-list {
-  list-style: none;
-  padding: 0;
-}
+.requirements-list { list-style: none; padding: 0; }
 .requirements-list li {
-  background-color: #1c1c1c;
-  padding: 15px 20px;
-  margin-bottom: 10px;
-  border-radius: 8px;
-  font-size: 1rem;
-  border-left: 4px solid #ff512f;
+  background-color: #1c1c1c; padding: 15px 20px;
+  margin-bottom: 10px; border-radius: 8px;
+  font-size: 1rem; border-left: 4px solid #ff512f;
 }
 .requirements-list strong {
-  display: block;
-  color: #e0e0e0;
-  margin-bottom: 5px;
-  font-size: 1.1rem;
+  display: block; color: #e0e0e0; margin-bottom: 5px; font-size: 1.1rem;
 }
-.faq-item {
-  margin-bottom: 25px;
-}
+.faq-item { margin-bottom: 25px; }
 .faq-item h3 {
-  margin: 0 0 8px 0;
-  font-size: 1.3rem;
-  color: #dd2476;
+  margin: 0 0 8px 0; font-size: 1.3rem; color: #dd2476;
 }
 .faq-item p, .faq-item p a {
-  font-size: 1rem;
-  line-height: 1.6;
-  color: #ccc;
+  font-size: 1rem; line-height: 1.6; color: #ccc;
 }
-.faq-item a {
-  color: #ff8c6e;
-}
+.faq-item a { color: #ff8c6e; }
 .easter-egg-overlay {
-  display: none;
-  position: fixed;
-  top: 0; left: 0;
-  width: 100vw; height: 100vh;
-  background-color: rgba(10, 0, 0, 0.97);
-  color: #ff4d4d;
-  font-family: 'Impact', 'Arial Black', sans-serif;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  z-index: 10000;
+  display: none; position: fixed; top: 0; left: 0;
+  width: 100vw; height: 100vh; background-color: rgba(10,0,0,0.97);
+  color: #ff4d4d; font-family: 'Impact','Arial Black',sans-serif;
+  flex-direction: column; justify-content: center; align-items: center;
+  text-align: center; z-index: 10000;
 }
 .easter-egg-overlay h1 {
-  font-size: 4.5rem;
-  text-transform: uppercase;
-  letter-spacing: 0.1em;
-  text-shadow: 2px 2px 8px #000;
+  font-size: 4.5rem; text-transform: uppercase;
+  letter-spacing: .1em; text-shadow: 2px 2px 8px #000;
 }
 .easter-egg-overlay p {
-  font-size: 1.6rem;
-  max-width: 650px;
+  font-size: 1.6rem; max-width: 650px;
 }
 .easter-egg-overlay footer {
-  margin-top: 3em;
-  font-size: 1rem;
-  color: #666;
+  margin-top: 3em; font-size: 1rem; color: #666;
 }
 @media (max-width: 768px) {
   .hero-section {
-    flex-direction: column;
-    padding: 20px 10px;
+    flex-direction: column; padding: 20px 10px;
   }
   .content-column.left {
-    text-align: center;
-    max-width: 100%;
+    text-align: center; max-width: 100%;
   }
-  .content-column.right {
-    align-items: center;
-  }
-  .hero-section h1 {
-    font-size: 2.2rem;
-  }
-  .button, .copy-button {
-    max-width: 100%;
-  }
+  .content-column.right { align-items: center; }
+  .hero-section h1 { font-size: 2.2rem; }
+  .button, .copy-button { max-width: 100%; }
 }
 </style>
 </head>
@@ -282,7 +182,9 @@ main {
       <a href="https://www.mediafire.com/file/d96ecotacqccgn4/org.nikoyandere.yanix-launcher.ucn/file" class="button" target="_blank" rel="noopener noreferrer">Download .UCN Package</a>
       <a href="https://nikoyandere.github.io/windows" class="button" target="_blank" rel="noopener noreferrer">Windows Version</a>
       <div class="notice-box">
-        <p><strong>For UCN Package Manager Users:</strong> The <code>.ucn</code> package requires the <a href="https://github.com/NikoYandere/ucn-package-manager" target="_blank" rel="noopener noreferrer">UCN Package Manager</a>. After installation, remember to run:<br /><code>chmod +x ~/.ucndata/packages/org.nikoyandere.yanix-launcher/yanix-launcher/binary/yanix-launcher</code></p>
+        <p><strong>For UCN Package Manager Users:</strong> The <code>.ucn</code> package requires the <a href="https://github.com/NikoYandere/ucn-package-manager" target="_blank" rel="noopener noreferrer">UCN Package Manager</a>. After installation, remember to run:
+          <code>chmod +x ~/.ucndata/packages/org.nikoyandere.yanix-launcher/yanix-launcher/binary/yanix-launcher</code>
+        </p>
       </div>
       <div class="notice-box">
         <h3>Manual Installation (Git)</h3>
@@ -299,7 +201,7 @@ main {
         <li><strong>Kernel:</strong> 5.10 or newer</li>
         <li><strong>Processor:</strong> Intel Core i5 or equivalent AMD processor (Modern dual-core or older quad-core CPU)</li>
         <li><strong>RAM:</strong> 6 GB</li>
-        <li><strong>Graphics:</strong> Intel HD Graphics,Iris Xe,Vega 3-8,RDNA2... (Must be DirectX 11 compatible)</li>
+        <li><strong>Graphics:</strong> Intel HD Graphics, Iris Xe, Vega 3-8, RDNA2... (Must be DirectX 11 compatible)</li>
         <li><strong>DirectX:</strong> Version 11 (handled by WINE)</li>
         <li><strong>Storage:</strong> Around 5 GB of free space</li>
       </ul>
