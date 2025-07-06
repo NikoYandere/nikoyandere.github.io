@@ -1,396 +1,371 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Yanix Launcher | Play Yandere Simulator on Linux & Mac</title>
-    <meta name="description" content="Download Yanix Launcher, an open-source launcher for playing Yandere Simulator on Linux and macOS using WINE. Check system requirements, get installation guides, and join the community.">
-    <meta name="keywords" content="Yanix Launcher, Yandere Simulator Linux, Yandere Simulator Mac, Yandere Simulator WINE, Play Yandere Simulator on Linux, Play Yandere Simulator on Mac, open-source game launcher, Python, NikoYandere, Akademi Launcher, system requirements">
-    <meta name="author" content="NikoYandere">
-    <link rel="canonical" href="https://nikoyandere.github.io/">
-    <link rel="icon" type="image/png" href="Yanix-Launcher.png">
-    <meta property="og:title" content="Yanix Launcher | Yandere Simulator for Linux & Mac">
-    <meta property="og:description" content="The easiest way to install and play Yandere Simulator on Linux and macOS. An optimized, open-source launcher built with Python and WINE.">
-    <meta property="og:image" content="https://nikoyandere.github.io/Yanix-Launcher.png">
-    <meta property="og:url" content="https://nikoyandere.github.io/">
-    <meta property="og:type" content="website">
-    <meta property="og:site_name" content="Yanix Launcher">
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Yanix Launcher | Yandere Simulator for Linux & Mac">
-    <meta name="twitter:description" content="Download the open-source Yanix Launcher to play Yandere Simulator seamlessly on Linux and macOS systems.">
-    <meta name="twitter:image" content="https://nikoyandere.github.io/Yanix-Launcher.png">
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "SoftwareApplication",
-      "name": "Yanix Launcher",
-      "applicationCategory": "GameApplication",
-      "operatingSystem": "Linux, macOS",
-      "description": "An independent, open-source launcher designed to run Yandere Simulator on Linux and macOS using WINE.",
-      "url": "https://nikoyandere.github.io/",
-      "author": {
-        "@type": "Person",
-        "name": "NikoYandere"
-      },
-      "license": "https://github.com/NikoYandere/yanix-launcher/blob/main/LICENSE",
-      "downloadUrl": "https://www.mediafire.com/file/d96ecotacqccgn4/org.nikoyandere.yanix-launcher.ucn/file",
-      "softwareVersion": "0.8",
-      "requirements": {
-        "@type": "SoftwareApplication",
-        "processorRequirements": "Intel Core i5 or equivalent AMD processor",
-        "memoryRequirements": "6 GB RAM",
-        "storageRequirements": "5 GB"
-      }
-    }
-    </script>
-    <style>
-        html {
-            scroll-behavior: smooth;
-        }
-        body {
-            margin: 0;
-            padding: 0;
-            font-family: 'Segoe UI', 'Roboto', 'Helvetica Neue', Arial, sans-serif;
-            background-color: #0a0a0a;
-            color: #e0e0e0;
-            overflow-x: hidden;
-        }
-        main { display: block; }
-        .section {
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            min-height: 100vh;
-            padding: 40px 20px;
-            text-align: center;
-            box-sizing: border-box;
-            border-bottom: 1px solid #222;
-        }
-        .section:last-child {
-            border-bottom: none;
-        }
-        .hero-section {
-            background: linear-gradient(-45deg, #dd2476, #ff512f, #a100ff, #00d9ff);
-            background-size: 400% 400%;
-            animation: gradient-animation 15s ease infinite;
-            color: white;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            text-align: center;
-        }
-        @keyframes gradient-animation {
-            0% {
-                background-position: 0% 50%;
-            }
-            50% {
-                background-position: 100% 50%;
-            }
-            100% {
-                background-position: 0% 50%;
-            }
-        }
-        .content-column {
-            flex: 1 1 auto;
-            padding: 20px;
-            width: 100%;
-            max-width: 600px;
-        }
-        .content-column.left { text-align: center; }
-        .content-column.right {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-        }
-        .hero-section h1 {
-            font-size: 2.2rem;
-            margin-bottom: 0.5em;
-            font-weight: 700;
-        }
-        .hero-section p {
-            font-size: 1.1rem;
-            line-height: 1.7;
-            margin-bottom: 1.5rem;
-        }
-        .logo {
-            width: 150px;
-            height: auto;
-            margin-bottom: 20px;
-        }
-        .button {
-            display: inline-block;
-            margin: 8px auto;
-            padding: 14px 28px;
-            font-size: 1rem;
-            font-weight: 600;
-            border: none;
-            background-color: #1a1a1a;
-            color: white;
-            cursor: pointer;
-            border-radius: 8px;
-            text-decoration: none;
-            text-align: center;
-            transition: background-color 0.3s ease, transform 0.2s ease;
-            width: 80%;
-            max-width: 280px;
-        }
-        .button:hover {
-            background-color: #333;
-            transform: translateY(-2px);
-        }
-        .notice-box {
-            margin-top: 15px;
-            background-color: rgba(0, 0, 0, 0.3);
-            color: #f0f0f0;
-            padding: 15px;
-            border-radius: 8px;
-            max-width: 320px;
-            text-align: left;
-            font-size: 0.9rem;
-            box-sizing: border-box;
-            width: 90%; 
-        }
-        .notice-box a {
-            color: #ff8c6e;
-            text-decoration: underline;
-        }
-        .code-block {
-            background: #1e1e1e;
-            padding: 12px;
-            border-radius: 8px;
-            font-family: 'Courier New', Courier, monospace;
-            font-size: 0.9rem;
-            color: white;
-            margin-top: 10px;
-            word-break: break-all;
-            position: relative;
-        }
-        .copy-button {
-            margin-top: 10px;
-            padding: 10px 20px;
-            font-size: 0.9rem;
-        }
-        .requirements-section, .faq-section {
-            background-color: #111;
-            padding: 60px 20px;
-            width: 100%;
-        }
-        .container {
-            max-width: 800px;
-            margin: 0 auto;
-            text-align: left;
-        }
-        .section h2 {
-            text-align: center;
-            font-size: 2.2rem;
-            margin-bottom: 40px;
-            color: #dd2476;
-        }
-        .requirements-list {
-            list-style: none;
-            padding: 0;
-        }
-        .requirements-list li {
-            background-color: #1c1c1c;
-            padding: 15px 20px;
-            margin-bottom: 10px;
-            border-radius: 8px;
-            font-size: 1rem;
-            border-left: 4px solid #ff512f;
-        }
-        .requirements-list strong {
-            display: block;
-            color: #e0e0e0;
-            margin-bottom: 5px;
-            font-size: 1.1rem;
-        }
-        .faq-item {
-            margin-bottom: 25px;
-        }
-        .faq-item h3 {
-            margin: 0 0 8px 0;
-            font-size: 1.3rem;
-            color: #dd2476;
-        }
-        .faq-item p, .faq-item p a {
-            font-size: 1rem;
-            line-height: 1.6;
-            color: #ccc;
-        }
-        .faq-item a { color: #ff8c6e; }
-        .easter-egg-overlay {
-            display: none;
-            position: fixed;
-            top: 0; left: 0;
-            width: 100%; height: 100%;
-            background-color: rgba(10, 0, 0, 0.97);
-            color: #ff4d4d;
-            font-family: 'Impact', 'Arial Black', sans-serif;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            text-align: center;
-            z-index: 10000;
-        }
-        .easter-egg-overlay h1 {
-            font-size: 4.5rem;
-            text-transform: uppercase;
-            letter-spacing: 0.1em;
-            text-shadow: 2px 2px 8px #000;
-        }
-        .easter-egg-overlay p {
-            font-size: 1.6rem;
-            max-width: 650px;
-        }
-        .easter-egg-overlay footer {
-            margin-top: 3em;
-            font-size: 1rem;
-            color: #666;
-        }
-        @media (max-width: 768px) {
-            .hero-section h1 {
-                font-size: 2rem;
-            }
-            .hero-section p {
-                font-size: 1rem;
-            }
-            .button {
-                width: 90%;
-            }
-            .notice-box {
-                max-width: 90%;
-                margin-left: auto;
-                margin-right: auto;
-            }
-            .content-column.left {
-                order: 2;
-            }
-            .content-column.right {
-                order: 1;
-            }
-        }
+<meta charset="UTF-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Yanix Launcher | Play Yandere Simulator on Linux & Mac</title>
+<meta name="description" content="Download Yanix Launcher, an open-source launcher for playing Yandere Simulator on Linux and macOS using WINE. Check system requirements, get installation guides, and join the community." />
+<meta name="keywords" content="Yanix Launcher, Yandere Simulator Linux, Yandere Simulator Mac, Yandere Simulator WINE, Play Yandere Simulator on Linux, Play Yandere Simulator on Mac, open-source game launcher, Python, NikoYandere, Akademi Launcher, system requirements" />
+<meta name="author" content="NikoYandere" />
+<link rel="canonical" href="https://nikoyandere.github.io/" />
+<link rel="icon" type="image/png" href="Yanix-Launcher.png" />
 
-        @media (min-width: 769px) {
-            .hero-section {
-                flex-direction: row;
-                flex-wrap: wrap;
-                justify-content: space-around;
-            }
-            .content-column.left {
-                text-align: left;
-            }
-            .content-column {
-                flex: 1 1 450px;
-            }
-        }
-    </style>
+<meta property="og:title" content="Yanix Launcher | Yandere Simulator for Linux & Mac" />
+<meta property="og:description" content="The easiest way to install and play Yandere Simulator on Linux and macOS. An optimized, open-source launcher built with Python and WINE." />
+<meta property="og:image" content="https://nikoyandere.github.io/Yanix-Launcher.png" />
+<meta property="og:url" content="https://nikoyandere.github.io/" />
+<meta property="og:type" content="website" />
+<meta property="og:site_name" content="Yanix Launcher" />
+
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Yanix Launcher | Yandere Simulator for Linux & Mac" />
+<meta name="twitter:description" content="Download the open-source Yanix Launcher to play Yandere Simulator seamlessly on Linux and macOS systems." />
+<meta name="twitter:image" content="https://nikoyandere.github.io/Yanix-Launcher.png" />
+
+<style>
+html {
+  scroll-behavior: smooth;
+  box-sizing: border-box;
+}
+*, *::before, *::after {
+  box-sizing: inherit;
+}
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Segoe UI', 'Roboto', 'Helvetica Neue', Arial, sans-serif;
+  background-color: #0a0a0a;
+  color: #e0e0e0;
+  overflow-x: hidden;
+}
+main {
+  display: block;
+}
+.section {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  padding: 40px 20px;
+  text-align: center;
+  border-bottom: 1px solid #222;
+  max-width: 100vw;
+  overflow-x: hidden;
+}
+.section:last-child {
+  border-bottom: none;
+}
+.hero-section {
+  background: linear-gradient(-45deg, #dd2476, #ff512f, #a100ff, #00d9ff);
+  background-size: 400% 400%;
+  animation: gradient-animation 15s ease infinite;
+  color: white;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+@keyframes gradient-animation {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+.content-column {
+  flex: 1 1 400px;
+  padding: 20px;
+  max-width: 600px;
+  box-sizing: border-box;
+}
+.content-column.left {
+  text-align: left;
+}
+.content-column.right {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+.hero-section h1 {
+  font-size: 2.8rem;
+  margin-bottom: 0.5em;
+  font-weight: 700;
+}
+.hero-section p {
+  font-size: 1.1rem;
+  line-height: 1.7;
+  margin-bottom: 1.5rem;
+}
+.logo {
+  width: 150px;
+  height: auto;
+  margin-bottom: 20px;
+}
+.button {
+  display: inline-block;
+  margin: 8px 0;
+  padding: 14px 28px;
+  font-size: 1rem;
+  font-weight: 600;
+  border: none;
+  background-color: #1a1a1a;
+  color: white;
+  cursor: pointer;
+  border-radius: 8px;
+  text-decoration: none;
+  text-align: center;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  width: 100%;
+  max-width: 280px;
+  box-sizing: border-box;
+}
+.button:hover {
+  background-color: #333;
+  transform: translateY(-2px);
+}
+.notice-box {
+  margin-top: 15px;
+  background-color: rgba(0, 0, 0, 0.3);
+  color: #f0f0f0;
+  padding: 15px;
+  border-radius: 8px;
+  max-width: 320px;
+  text-align: left;
+  font-size: 0.9rem;
+}
+.notice-box a {
+  color: #ff8c6e;
+  text-decoration: underline;
+}
+.code-block {
+  background: #1e1e1e;
+  padding: 12px;
+  border-radius: 8px;
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 1rem;
+  color: white;
+  margin-top: 10px;
+  word-break: break-word;
+  position: relative;
+}
+.copy-button {
+  margin-top: 10px;
+  padding: 10px 20px;
+  font-size: 0.9rem;
+  width: 100%;
+  max-width: 280px;
+  box-sizing: border-box;
+}
+.requirements-section, .faq-section {
+  background-color: #111;
+  padding: 60px 20px;
+  width: 100%;
+  max-width: 900px;
+  margin: 0 auto;
+  box-sizing: border-box;
+}
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+  text-align: left;
+  box-sizing: border-box;
+}
+.section h2 {
+  text-align: center;
+  font-size: 2.2rem;
+  margin-bottom: 40px;
+  color: #dd2476;
+}
+.requirements-list {
+  list-style: none;
+  padding: 0;
+}
+.requirements-list li {
+  background-color: #1c1c1c;
+  padding: 15px 20px;
+  margin-bottom: 10px;
+  border-radius: 8px;
+  font-size: 1rem;
+  border-left: 4px solid #ff512f;
+}
+.requirements-list strong {
+  display: block;
+  color: #e0e0e0;
+  margin-bottom: 5px;
+  font-size: 1.1rem;
+}
+.faq-item {
+  margin-bottom: 25px;
+}
+.faq-item h3 {
+  margin: 0 0 8px 0;
+  font-size: 1.3rem;
+  color: #dd2476;
+}
+.faq-item p, .faq-item p a {
+  font-size: 1rem;
+  line-height: 1.6;
+  color: #ccc;
+}
+.faq-item a {
+  color: #ff8c6e;
+}
+.easter-egg-overlay {
+  display: none;
+  position: fixed;
+  top: 0; left: 0;
+  width: 100vw; height: 100vh;
+  background-color: rgba(10, 0, 0, 0.97);
+  color: #ff4d4d;
+  font-family: 'Impact', 'Arial Black', sans-serif;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  z-index: 10000;
+}
+.easter-egg-overlay h1 {
+  font-size: 4.5rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  text-shadow: 2px 2px 8px #000;
+}
+.easter-egg-overlay p {
+  font-size: 1.6rem;
+  max-width: 650px;
+}
+.easter-egg-overlay footer {
+  margin-top: 3em;
+  font-size: 1rem;
+  color: #666;
+}
+@media (max-width: 768px) {
+  .hero-section {
+    flex-direction: column;
+    padding: 20px 10px;
+  }
+  .content-column.left {
+    text-align: center;
+    max-width: 100%;
+  }
+  .content-column.right {
+    align-items: center;
+  }
+  .hero-section h1 {
+    font-size: 2.2rem;
+  }
+  .button, .copy-button {
+    max-width: 100%;
+  }
+}
+</style>
 </head>
 <body>
-
 <main>
-    <section id="home" class="section hero-section">
-        <div class="content-column left">
-            <h1>The Definitive Yandere Simulator Launcher for Linux & macOS</h1>
-            <p>Yanix Launcher is an open-source project dedicated to bringing Yandere Simulator to the Linux and macOS communities. Using WINE (version 8.0+ recommended), it provides a streamlined way to install, update, and play the game.</p>
-            <p>While most major display issues have been resolved, some font rendering bugs may persist. You can often fix these by running <code>winetricks allfonts</code> in your terminal. This project is community-driven and independent of the official game developer.</p>
-            <p><strong>Windows Version (Akademi Launcher):</strong> A native Windows version is in development under the name Akademi Launcher. It is not yet on par with the Linux/Mac versions. Track its progress on the <a href="https://github.com/NikoYandere/akademi-launcher" target="_blank" rel="noopener noreferrer" style="color:white;">Akademi Launcher GitHub</a>.</p>
-        </div>
-        <div class="content-column right">
-            <img src="Yanix-Launcher.png" alt="Yanix Launcher Official Logo" class="logo">
-            <h2 style="font-size: 1.8rem; color: white; font-weight: bold;">Licensed Under Niko's License V3 (NLv3)</h2>
-            <a href="https://github.com/NikoYandere/yanix-launcher" class="button" target="_blank" rel="noopener noreferrer">View on GitHub</a>
-            <a href="https://yanix-launcher.blogspot.com" class="button" target="_blank" rel="noopener noreferrer">Read Dev Blog</a>
-            <a href="https://discord.gg/7JC4FGn69U" class="button" target="_blank" rel="noopener noreferrer">Join our Discord</a>
-            <a href="https://www.mediafire.com/file/d96ecotacqccgn4/org.nikoyandere.yanix-launcher.ucn/file" class="button" target="_blank" rel="noopener noreferrer">Download .UCN Package</a>
-            <a href="https://nikoyandere.github.io/windows" class="button" target="_blank" rel="noopener noreferrer">Windows Version</a>
-            <div class="notice-box">
-                <p><strong>For UCN Package Manager Users:</strong> The <code>.ucn</code> package requires the <a href="https://github.com/NikoYandere/ucn-package-manager" target="_blank" rel="noopener noreferrer">UCN Package Manager</a>. After installation, remember to run:<br><code>chmod +x ~/.ucndata/packages/org.nikoyandere.yanix-launcher/yanix-launcher/binary/yanix-launcher</code></p>
-            </div>
-            <div class="notice-box">
-                <h3>Manual Installation (Git)</h3>
-                <div class="code-block" id="clone-command">git clone https://github.com/NikoYandere/yanix-launcher.git</div>
-                <button type="button" class="button copy-button" aria-label="Copy Git clone command" onclick="copyGitCommand()">Copy Command</button>
-            </div>
-        </div>
-    </section>
+  <section id="home" class="section hero-section">
+    <div class="content-column left">
+      <h1>The Definitive Yandere Simulator Launcher for Linux & macOS</h1>
+      <p>Yanix Launcher is an open-source project dedicated to bringing Yandere Simulator to the Linux and macOS communities. Using WINE (version 8.0+ recommended), it provides a streamlined way to install, update, and play the game.</p>
+      <p>While most major display issues have been resolved, some font rendering bugs may persist. You can often fix these by running <code>winetricks allfonts</code> in your terminal. This project is community-driven and independent of the official game developer.</p>
+      <p><strong>Windows Version (Akademi Launcher):</strong> A native Windows version is in development under the name Akademi Launcher. It is not yet on par with the Linux/Mac versions. Track its progress on the <a href="https://github.com/NikoYandere/akademi-launcher" target="_blank" rel="noopener noreferrer" style="color:white;">Akademi Launcher GitHub</a>.</p>
+    </div>
+    <div class="content-column right">
+      <img src="Yanix-Launcher.png" alt="Yanix Launcher Official Logo" class="logo" />
+      <h2 style="font-size: 1.8rem; color: white; font-weight: bold;">Licensed Under Niko's License V3 (NLv3)</h2>
+      <a href="https://github.com/NikoYandere/yanix-launcher" class="button" target="_blank" rel="noopener noreferrer">View on GitHub</a>
+      <a href="https://yanix-launcher.blogspot.com" class="button" target="_blank" rel="noopener noreferrer">Read Dev Blog</a>
+      <a href="https://discord.gg/7JC4FGn69U" class="button" target="_blank" rel="noopener noreferrer">Join our Discord</a>
+      <a href="https://www.mediafire.com/file/d96ecotacqccgn4/org.nikoyandere.yanix-launcher.ucn/file" class="button" target="_blank" rel="noopener noreferrer">Download .UCN Package</a>
+      <a href="https://nikoyandere.github.io/windows" class="button" target="_blank" rel="noopener noreferrer">Windows Version</a>
+      <div class="notice-box">
+        <p><strong>For UCN Package Manager Users:</strong> The <code>.ucn</code> package requires the <a href="https://github.com/NikoYandere/ucn-package-manager" target="_blank" rel="noopener noreferrer">UCN Package Manager</a>. After installation, remember to run:<br /><code>chmod +x ~/.ucndata/packages/org.nikoyandere.yanix-launcher/yanix-launcher/binary/yanix-launcher</code></p>
+      </div>
+      <div class="notice-box">
+        <h3>Manual Installation (Git)</h3>
+        <div class="code-block" id="clone-command">git clone https://github.com/NikoYandere/yanix-launcher.git</div>
+        <button type="button" class="button copy-button" aria-label="Copy Git clone command" onclick="copyGitCommand()">Copy Command</button>
+      </div>
+    </div>
+  </section>
 
-    <section id="requirements" class="section requirements-section">
-        <div class="container">
-            <h2>Minimum System Requirements</h2>
-            <ul class="requirements-list">
-                <li><strong>Kernel:</strong> 5.10 or newer</li>
-                <li><strong>Processor:</strong> Intel Core i5 or equivalent AMD processor (Modern dual-core or older quad-core CPU)</li>
-                <li><strong>RAM:</strong> 6 GB</li>
-                <li><strong>Graphics:</strong> Intel HD Graphics,Iris Xe,Vega 3-8,RDNA2... (Must be DirectX 11 compatible)</li>
-                <li><strong>DirectX:</strong> Version 11 (handled by WINE)</li>
-                <li><strong>Storage:</strong> Around 5 GB of free space</li>
-            </ul>
-        </div>
-    </section>
+  <section id="requirements" class="section requirements-section">
+    <div class="container">
+      <h2>Minimum System Requirements</h2>
+      <ul class="requirements-list">
+        <li><strong>Kernel:</strong> 5.10 or newer</li>
+        <li><strong>Processor:</strong> Intel Core i5 or equivalent AMD processor (Modern dual-core or older quad-core CPU)</li>
+        <li><strong>RAM:</strong> 6 GB</li>
+        <li><strong>Graphics:</strong> Intel HD Graphics,Iris Xe,Vega 3-8,RDNA2... (Must be DirectX 11 compatible)</li>
+        <li><strong>DirectX:</strong> Version 11 (handled by WINE)</li>
+        <li><strong>Storage:</strong> Around 5 GB of free space</li>
+      </ul>
+    </div>
+  </section>
 
-    <section id="faq" class="section faq-section">
-        <div class="container">
-            <h2>Frequently Asked Questions (FAQ)</h2>
-            <div class="faq-item">
-                <h3>Is this launcher an official Yandere Simulator product?</h3>
-                <p>No, Yanix Launcher is an independent, community-driven project and is not affiliated with or endorsed by YandereDev.</p>
-            </div>
-            <div class="faq-item">
-                <h3>Is this a native port of the game?</h3>
-                <p>Not exactly. Yanix Launcher uses the WINE compatibility layer to run the original Windows version of Yandere Simulator on Linux and macOS. It does not modify the game's source code.</p>
-            </div>
-            <div class="faq-item">
-                <h3>Is Yanix Launcher available for macOS?</h3>
-                <p>Yes, macOS support and optimizations were introduced starting with version 0.2.2.4.</p>
-            </div>
-            <div class="faq-item">
-                <h3>Is the code for Yanix Launcher original?</h3>
-                <p>Yes. The launcher is a custom GUI built with Qt5 to launch Yandere Simulator. The full source code is original and available on our <a href="https://github.com/NikoYandere/yanix-launcher" target="_blank" rel="noopener noreferrer">GitHub repository</a>.</p>
-            </div>
-             <div class="faq-item">
-                <h3>Where can I find the source code for this website?</h3>
-                <p>The source code for this landing page is also open-source and can be found <a href="https://github.com/NikoYandere/nikoyandere.github.io" target="_blank" rel="noopener noreferrer">on GitHub</a>.</p>
-            </div>
-        </div>
-    </section>
+  <section id="faq" class="section faq-section">
+    <div class="container">
+      <h2>Frequently Asked Questions (FAQ)</h2>
+      <div class="faq-item">
+        <h3>Is this launcher an official Yandere Simulator product?</h3>
+        <p>No, Yanix Launcher is an independent, community-driven project and is not affiliated with or endorsed by YandereDev.</p>
+      </div>
+      <div class="faq-item">
+        <h3>Is this a native port of the game?</h3>
+        <p>Not exactly. Yanix Launcher uses the WINE compatibility layer to run the original Windows version of Yandere Simulator on Linux and macOS. It does not modify the game's source code.</p>
+      </div>
+      <div class="faq-item">
+        <h3>Is Yanix Launcher available for macOS?</h3>
+        <p>Yes, macOS support and optimizations were introduced starting with version 0.2.2.4.</p>
+      </div>
+      <div class="faq-item">
+        <h3>Is the code for Yanix Launcher original?</h3>
+        <p>Yes. The launcher is a custom GUI built with Qt5 to launch Yandere Simulator. The full source code is original and available on our <a href="https://github.com/NikoYandere/yanix-launcher" target="_blank" rel="noopener noreferrer">GitHub repository</a>.</p>
+      </div>
+      <div class="faq-item">
+        <h3>Where can I find the source code for this website?</h3>
+        <p>The source code for this landing page is also open-source and can be found <a href="https://github.com/NikoYandere/nikoyandere.github.io" target="_blank" rel="noopener noreferrer">on GitHub</a>.</p>
+      </div>
+    </div>
+  </section>
 </main>
 
 <div id="easter-egg-overlay" class="easter-egg-overlay">
-    <h1>DOMAIN SEIZED</h1>
-    <p>This domain has been seized by order of the Yanix community.<br>Now scram, weirdo :3</p>
-    <footer>&copy; 2025 Yanix Launcher Community</footer>
+  <h1>DOMAIN SEIZED</h1>
+  <p>This domain has been seized by order of the Yanix community.<br />Now scram, weirdo :3</p>
+  <footer>&copy; 2025 Yanix Launcher Community</footer>
 </div>
 
 <script>
-    function copyGitCommand() {
-        const commandText = document.getElementById("clone-command").textContent;
-        const tempTextArea = document.createElement('textarea');
-        tempTextArea.value = commandText;
-        document.body.appendChild(tempTextArea);
-        tempTextArea.select();
-        document.execCommand('copy');
-        document.body.removeChild(tempTextArea);
+function copyGitCommand() {
+  const commandText = document.getElementById("clone-command").textContent;
+  const tempTextArea = document.createElement('textarea');
+  tempTextArea.value = commandText;
+  document.body.appendChild(tempTextArea);
+  tempTextArea.select();
+  document.execCommand('copy');
+  document.body.removeChild(tempTextArea);
 
-        const btn = document.querySelector('button[onclick="copyGitCommand()"]');
-        const originalText = btn.textContent;
-        btn.textContent = "Copied!";
-        setTimeout(() => { btn.textContent = originalText; }, 2000);
+  const btn = document.querySelector('button[onclick="copyGitCommand()"]');
+  const originalText = btn.textContent;
+  btn.textContent = "Copied!";
+  setTimeout(() => { btn.textContent = originalText; }, 2000);
+}
+
+(function() {
+  const secretCode = 'DOMAINSEIZED';
+  let keySequence = [];
+  document.addEventListener('keydown', (e) => {
+    keySequence.push(e.key.toUpperCase());
+    keySequence = keySequence.slice(-secretCode.length);
+    if (keySequence.join('') === secretCode) {
+      document.getElementById('easter-egg-overlay').style.display = 'flex';
     }
-
-    (function() {
-        const secretCode = 'DOMAINSEIZED';
-        let keySequence = [];
-        document.addEventListener('keydown', (e) => {
-            keySequence.push(e.key.toUpperCase());
-            keySequence = keySequence.slice(-secretCode.length);
-            if (keySequence.join('') === secretCode) {
-                document.getElementById('easter-egg-overlay').style.display = 'flex';
-            }
-        });
-    })();
+  });
+})();
 </script>
 
 </body>
