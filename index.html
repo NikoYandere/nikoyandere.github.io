@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -137,7 +138,7 @@ main { display: block; }
   margin-top: 10px; padding: 10px 20px; font-size: .9rem;
   width: 100%; max-width: 280px; box-sizing: border-box;
 }
-.requirements-section, .faq-section {
+.requirements-section, .faq-section, .license-section {
   background-color: #111; padding: 60px 20px;
   width: 100%;
   max-width: 900px;
@@ -263,13 +264,6 @@ main { display: block; }
         <p><strong>Windows Version (Akademi Launcher):</strong> A native Windows version is in development under the name Akademi Launcher. It is not yet on par with the Linux/Mac versions. Track its progress on the <a href="https://github.com/NikoYandere/akademi-launcher" target="_blank" rel="noopener noreferrer" style="color:white;">Akademi Launcher GitHub</a>.</p>
       </div>
       <div class="content-column right">
-        <img src="Yanix-Launcher.png" alt="Yanix Launcher Official Logo" class="logo" />
-        <h2 style="font-size: 1.8rem; color: white; font-weight: bold;">Licensed Under Niko's License V3 (NLv3)</h2>
-        <a href="https://github.com/NikoYandere/yanix-launcher" class="button" target="_blank" rel="noopener noreferrer">View on GitHub</a>
-        <a href="https://yanix-launcher.blogspot.com" class="button" target="_blank" rel="noopener noreferrer">Read Dev Blog</a>
-        <a href="https://discord.gg/7JC4FGn69U" class="button" target="_blank" rel="noopener noreferrer">Join our Discord</a>
-        <a href="https://www.mediafire.com/file/d96ecotacqccgn4/org.nikoyandere.yanix-launcher.ucn/file" class="button" target="_blank" rel="noopener noreferrer">Download .UCN Package</a>
-        <a href="https://nikoyandere.github.io/windows" class="button" target="_blank" rel="noopener noreferrer">Windows Version</a>
         <div class="notice-box">
           <p><strong>For UCN Package Manager Users:</strong> The <code>.ucn</code> package requires the <a href="https://github.com/NikoYandere/ucn-package-manager" target="_blank" rel="noopener noreferrer">UCN Package Manager</a>. After installation, remember to run:
             <code>chmod +x ~/.ucndata/packages/org.nikoyandere.yanix-launcher/yanix-launcher/binary/yanix-launcher</code>
@@ -284,6 +278,24 @@ main { display: block; }
     </div>
   </section>
 
+ 
+
+  <section id="license-community" class="section">
+    <div class="container license-section">
+      <h2>License and Community</h2>
+      <h3 style="font-size: 1.8rem; color: white; font-weight: bold; text-align: center; margin-bottom: 30px;">Licensed Under Niko's License V3 (NLv3)</h3>
+      <div style="display: flex; flex-direction: column; align-items: center; gap: 15px;">
+        <a href="https://github.com/NikoYandere/yanix-launcher" class="button" target="_blank" rel="noopener noreferrer">View on GitHub</a>
+        <a href="https://yanix-launcher.blogspot.com" class="button" target="_blank" rel="noopener noreferrer">Read Dev Blog</a>
+        <a href="https://discord.gg/7JC4FGn69U" class="button" target="_blank" rel="noopener noreferrer">Join our Discord</a>
+        <a href="https://www.mediafire.com/file/d96ecotacqccgn4/org.nikoyandere.yanix-launcher.ucn/file" class="button" target="_blank" rel="noopener noreferrer">Download .UCN Package</a>
+        <a href="https://nikoyandere.github.io/windows" class="button" target="_blank" rel="noopener noreferrer">Windows Version</a>
+      </div>
+    </div>
+  </section>
+
+ 
+
   <section id="requirements" class="section">
     <div class="container requirements-section">
       <h2>Minimum System Requirements</h2>
@@ -292,6 +304,7 @@ main { display: block; }
         <li><strong>Processor:</strong> Intel Core i5 or equivalent AMD processor (Modern dual-core or older quad-core CPU)</li>
         <li><strong>RAM:</strong> 6 GB</li>
         <li><strong>Graphics:</strong> Intel HD Graphics, Iris Xe, Vega 3-8, RDNA2... (Must be DirectX 11 compatible)</li>
+        <li><strong>VRAM/GTT:</strong> 4+ GB dedicated graphics memory (for best performance)</li>
         <li><strong>DirectX:</strong> Version 11 (handled by WINE)</li>
         <li><strong>Storage:</strong> Around 5 GB of free space</li>
       </ul>
