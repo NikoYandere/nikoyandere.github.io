@@ -34,11 +34,17 @@ body {
 }
 main { display: block; }
 .section {
-  display: flex; flex-direction: column;
-  justify-content: center; align-items: center;
-  min-height: 100vh; padding: 40px 20px;
-  text-align: center; border-bottom: 1px solid #222;
-  max-width: 100vw; overflow-x: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  padding: 40px 20px;
+  text-align: center;
+  border-bottom: 1px solid #222;
+  /* Remove max-width and overflow-x to allow content to naturally expand */
+  width: 100%; /* Ensure it takes full width */
+  box-sizing: border-box; /* Include padding in width */
 }
 .section:last-child { border-bottom: none; }
 .hero-section {
@@ -46,9 +52,15 @@ main { display: block; }
   background-size: 400% 400%;
   animation: gradient-animation 15s ease infinite;
   color: white;
-  display: flex; flex-wrap: wrap;
-  justify-content: center; align-items: center;
-  gap: 20px; max-width: 1200px; margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  max-width: 1200px; /* Constrain content width within the section */
+  margin: 0 auto;
+  padding: 20px; /* Add padding to the hero section itself */
+  box-sizing: border-box;
 }
 @keyframes gradient-animation {
   0% { background-position: 0% 50%; }
@@ -161,6 +173,39 @@ main { display: block; }
   .content-column.right { align-items: center; }
   .hero-section h1 { font-size: 2.2rem; }
   .button, .copy-button { max-width: 100%; }
+}
+
+/* New or modified styles for horizontal/ultrawide screens */
+@media (min-width: 1200px) {
+  .section {
+    padding: 60px 40px; /* Increase padding for larger screens */
+  }
+  .hero-section {
+    flex-wrap: nowrap; /* Prevent wrapping in very wide screens if desired */
+    justify-content: space-around; /* Distribute space more evenly */
+  }
+  .content-column {
+    flex: 1; /* Allow columns to grow and shrink equally */
+    max-width: 500px; /* Adjust max-width for better balance */
+  }
+  .hero-section h1 {
+    font-size: 3.5rem; /* Larger headings for ultrawide */
+  }
+  .hero-section p {
+    font-size: 1.2rem; /* Slightly larger text */
+  }
+  .logo {
+    width: 200px; /* Larger logo on wide screens */
+  }
+}
+
+@media (min-width: 1920px) {
+  .hero-section {
+    max-width: 1600px; /* Allow hero content to stretch more on 1920px+ */
+  }
+  .content-column {
+    max-width: 700px; /* Allow columns to be wider */
+  }
 }
 </style>
 </head>
